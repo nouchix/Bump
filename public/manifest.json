@@ -1,0 +1,17 @@
+{
+  "name": "Bump — Your Sound, Your Stage",
+  "short_name": "Bump",
+  "description": "Stream independent music for free. Artists retain 100% of music sales.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0F",
+  "theme_color": "#FF3D5A",
+  "icons": [
+    {
+      "src": "/assets/logo/bump-app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
