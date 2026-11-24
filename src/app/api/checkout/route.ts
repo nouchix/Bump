@@ -51,10 +51,10 @@ export async function POST(req: NextRequest) {
       cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/track/${trackId}?canceled=true`,
     };
 
-    // 100% Payout to Artist if connected
+    // Funds Flow: Platform collects payment via Checkout, then transfers 100% to Artist
     if (artistStripeAccount) {
       sessionParams.payment_intent_data = {
-        application_fee_amount: 0, // 0% platform fee - Artist keeps 100%
+        application_fee_amount: 0, // Zero platform fee — 100% of net payout to the artist
         transfer_data: {
           destination: artistStripeAccount,
         },
@@ -69,4 +69,3 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
-
