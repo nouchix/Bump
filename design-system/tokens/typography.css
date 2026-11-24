@@ -1,0 +1,35 @@
+:root{
+--font-display:'Space Grotesk','Sora','Inter Tight',system-ui,sans-serif;
+--font-body:'Space Grotesk','Sora','Inter Tight',system-ui,sans-serif;
+--font-mono:'Space Mono',ui-monospace,'SF Mono',monospace;
+--weight-regular:400;
+--weight-medium:500;
+--weight-semibold:600;
+--weight-bold:700;
+/* Scale */
+--text-xs:12px;
+--text-sm:14px;
+--text-md:16px;
+--text-lg:18px;
+--text-xl:20px;
+--text-2xl:24px;
+--text-3xl:30px;
+--text-4xl:36px;
+--text-5xl:48px;
+--text-6xl:64px;
+--leading-tight:1.05;
+--leading-snug:1.25;
+--leading-normal:1.5;
+--tracking-display:-0.04em;
+--tracking-heading:-0.02em;
+--tracking-body:0;
+--tracking-label:0.08em;
+/* Semantic roles */
+--type-display:var(--weight-bold) var(--text-6xl)/var(--leading-tight) var(--font-display);
+--type-h1:var(--weight-bold) var(--text-4xl)/var(--leading-tight) var(--font-display);
+--type-h2:var(--weight-bold) var(--text-2xl)/var(--leading-snug) var(--font-display);
+--type-h3:var(--weight-semibold) var(--text-lg)/var(--leading-snug) var(--font-display);
+--type-body:var(--weight-regular) var(--text-sm)/var(--leading-normal) var(--font-body);
+--type-caption:var(--weight-regular) var(--text-xs)/var(--leading-normal) var(--font-body);
+--type-label:var(--weight-semibold) var(--text-xs)/1 var(--font-body);
+}

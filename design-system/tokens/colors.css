@@ -1,0 +1,62 @@
+:root{
+/* Core brand palette */
+--bump-void:#0A0A0F;
+--bump-signal:#FF3D5A;
+--bump-pulse:#7C5CFF;
+--bump-static:#F5F5F7;
+--bump-grille:#1C1C24;
+/* Signal ramp */
+--signal-300:#FF8A9C;
+--signal-400:#FF5C74;
+--signal-500:#FF3D5A;
+--signal-600:#E62A47;
+--signal-700:#B81E37;
+/* Pulse ramp */
+--pulse-300:#B3A1FF;
+--pulse-400:#9479FF;
+--pulse-500:#7C5CFF;
+--pulse-600:#6644EB;
+--pulse-700:#4E31C2;
+/* Neutrals (blue-undertoned, built off Void → Static) */
+--ink-950:#0A0A0F;
+--ink-900:#121218;
+--ink-850:#1C1C24;
+--ink-800:#24242E;
+--ink-700:#2E2E3A;
+--ink-600:#454552;
+--ink-500:#6B6B7A;
+--ink-400:#9A9AA8;
+--ink-300:#C4C4CE;
+--ink-200:#E2E2E8;
+--ink-100:#F5F5F7;
+/* Semantic status */
+--success-500:#2BD98A;
+--warning-500:#FFB547;
+--danger-500:#FF3D5A;
+--danger-bg:#2A0F16;
+--danger-border:#5C1A28;
+--danger-fg:#FFC2CC;
+/* Semantic aliases */
+--bg-app:var(--bump-void);
+--surface-card:var(--bump-grille);
+--surface-raised:var(--ink-800);
+--surface-sunken:var(--ink-900);
+--surface-overlay:rgba(10,10,15,.82);
+--border-subtle:var(--ink-850);
+--border-default:var(--ink-700);
+--border-strong:var(--ink-600);
+--text-primary:var(--bump-static);
+--text-secondary:var(--ink-400);
+--text-tertiary:var(--ink-500);
+--text-on-accent:#FFFFFF;
+--accent:var(--bump-signal);
+--accent-hover:var(--signal-400);
+--accent-press:var(--signal-600);
+--accent-soft:rgba(255,61,90,.14);
+--accent-soft-border:rgba(255,61,90,.32);
+--accent-2:var(--bump-pulse);
+--accent-2-soft:rgba(124,92,255,.16);
+--accent-2-soft-border:rgba(124,92,255,.36);
+--focus-ring:rgba(255,61,90,.45);
+--gradient-hero:linear-gradient(135deg,var(--bump-signal) 0%,var(--bump-pulse) 100%);
+}

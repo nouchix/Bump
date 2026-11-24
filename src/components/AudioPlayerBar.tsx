@@ -2,7 +2,8 @@
 
 import React from 'react';
 import { usePlayer } from '@/context/PlayerContext';
-import { Play, Pause, Volume2, Disc3 } from 'lucide-react';
+import { Play, Pause, Disc3 } from 'lucide-react';
+import Link from 'next/link';
 
 export default function AudioPlayerBar() {
   const { currentTrack, isPlaying, togglePlay, currentTime, duration, seek } = usePlayer();
@@ -16,38 +17,38 @@ export default function AudioPlayerBar() {
   };
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 h-20 bg-zinc-950/95 border-t border-zinc-800 backdrop-blur px-6 flex items-center justify-between z-50">
+    <div className="fixed bottom-0 left-0 right-0 h-20 bg-void/90 border-t border-ink-850 backdrop-blur-lg px-6 flex items-center justify-between z-50">
       {/* Left: Track Info */}
-      <div className="flex items-center gap-3 w-1/4 min-w-[200px]">
+      <div className="flex items-center gap-3.5 w-1/4 min-w-[200px]">
         {currentTrack.cover_art_url ? (
           <img
             src={currentTrack.cover_art_url}
             alt={currentTrack.title}
-            className="w-12 h-12 rounded object-cover border border-zinc-800"
+            className="w-12 h-12 rounded-xl object-cover border border-ink-800"
           />
         ) : (
-          <div className="w-12 h-12 rounded bg-zinc-800 flex items-center justify-center text-zinc-500">
+          <div className="w-12 h-12 rounded-xl bg-ink-900 border border-ink-800 flex items-center justify-center text-ink-600">
             <Disc3 className="w-6 h-6 animate-spin-slow" />
           </div>
         )}
         <div className="truncate">
-          <p className="text-sm font-semibold text-white truncate">{currentTrack.title}</p>
-          <p className="text-xs text-zinc-400 truncate">
+          <p className="text-sm font-bold text-static truncate">{currentTrack.title}</p>
+          <p className="text-xs text-ink-400 truncate">
             {currentTrack.artist_name || 'Independent Artist'}
           </p>
         </div>
       </div>
 
       {/* Center: Controls & Scrubber */}
-      <div className="flex flex-col items-center gap-1 w-2/4 max-w-xl">
+      <div className="flex flex-col items-center gap-1.5 w-2/4 max-w-xl">
         <button
           onClick={togglePlay}
-          className="p-2 rounded-full bg-amber-500 hover:bg-amber-400 text-black transition"
+          className="p-2.5 rounded-full bg-signal hover:bg-signal-400 text-ink-950 transition active:scale-95"
         >
-          {isPlaying ? <Pause className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5 fill-current" />}
+          {isPlaying ? <Pause className="w-4 h-4 fill-current" /> : <Play className="w-4 h-4 fill-current ml-0.5" />}
         </button>
 
-        <div className="w-full flex items-center gap-3 text-xs text-zinc-400">
+        <div className="w-full flex items-center gap-3 text-xs font-mono text-ink-400">
           <span>{formatTime(currentTime)}</span>
           <input
             type="range"
@@ -55,26 +56,38 @@ export default function AudioPlayerBar() {
             max={duration || 100}
             value={currentTime}
             onChange={(e) => seek(Number(e.target.value))}
-            className="w-full accent-amber-500 h-1 bg-zinc-800 rounded cursor-pointer"
+            className="w-full accent-signal h-1 bg-ink-800 rounded cursor-pointer"
           />
           <span>{formatTime(duration)}</span>
         </div>
       </div>
 
-      {/* Right: Price & Direct Buy */}
-      <div className="flex items-center justify-end gap-4 w-1/4 min-w-[150px]">
+      {/* Right: Direct Buy */}
+      <div className="flex items-center justify-end gap-4 w-1/4 min-w-[160px]">
         {currentTrack.price_cents > 0 ? (
-          <a
-            href={`/track/${currentTrack.id}`}
-            className="text-xs font-semibold px-3 py-1.5 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30 hover:bg-amber-500/30 transition"
+          <button
+            onClick={() => {
+              fetch('/api/checkout', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  trackId: currentTrack.id,
+                  artistId: currentTrack.artist_id,
+                  title: currentTrack.title,
+                  amountCents: currentTrack.price_cents,
+                }),
+              })
+                .then((r) => r.json())
+                .then((d) => d.url && (window.location.href = d.url));
+            }}
+            className="text-xs font-mono font-bold px-3.5 py-1.5 rounded-full bg-signal/15 text-signal border border-signal/30 hover:bg-signal/25 transition"
           >
             Buy ${(currentTrack.price_cents / 100).toFixed(2)} (100% to Artist)
-          </a>
+          </button>
         ) : (
-          <span className="text-xs text-zinc-500">Free Stream</span>
+          <span className="text-xs font-mono text-ink-500">Free Stream</span>
         )}
       </div>
     </div>
   );
 }
-

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Launch landing page" description="Bump public landing page — hero, how it works, 100% promise, event block, CTA" -->
+<helmet><script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script><script src="./ds-base.js"></script><script src="./image-slot.js"></script><link rel="icon" href="../../assets/logo/favicon.svg"><style>body{margin:0;background:#0A0A0F}</style></helmet>
+<div style="min-height:100vh;background:#0A0A0F;color:#F5F5F7;font-family:'Space Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased">
+<sc-if value="{{ showEvent }}" hint-placeholder-val="{{ true }}">
+<a href="https://www.eventbrite.com/e/black-friday-marketplace-philly-4-real-tv-awards-ceremony-tickets-2004528782549" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:10px 24px;background:#FF3D5A;color:#0A0A0F;text-decoration:none;font-size:14px;font-weight:600;text-align:center"><span style="font-weight:700">Launching live in Philly</span><span>Black Friday Marketplace · Fri, Nov 27 · KANVAS Venue</span><span style="text-decoration:underline;text-underline-offset:3px">Get tickets</span></a>
+</sc-if>
+<header style="position:sticky;top:0;z-index:40;background:rgba(10,10,15,.8);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid #1C1C24">
+<div style="max-width:1200px;margin:0 auto;padding:0 24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px">
+<a href="#" style="display:flex"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Logo" height="{{ 30 }}" hint-size="96px,30px"></x-import></a>
+<nav style="display:flex;align-items:center;gap:24px;font-size:14px;font-weight:500">
+<a href="#artists" style="color:#9A9AA8;text-decoration:none" style-hover="color:#F5F5F7">For artists</a>
+<a href="#listeners" style="color:#9A9AA8;text-decoration:none" style-hover="color:#F5F5F7">For listeners</a>
+<a href="#philly" style="color:#9A9AA8;text-decoration:none" style-hover="color:#F5F5F7">Philly launch</a>
+<a href="#join" style="text-decoration:none"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Button" size="sm" hint-size="96px,32px">Join Bump</x-import></a>
+</nav>
+</div>
+</header>
+<section style="position:relative;overflow:hidden">
+<div style="position:absolute;inset:0;background:linear-gradient(135deg,#FF3D5A 0%,#7C5CFF 100%);opacity:.14;pointer-events:none"></div>
+<div style="position:relative;max-width:1200px;margin:0 auto;padding:88px 24px 96px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr));gap:56px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;gap:8px;flex-wrap:wrap"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Badge" tone="signal" icon="zap" hint-size="120px,22px">Now live</x-import><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Badge" hint-size="120px,22px">100% to artist</x-import></div>
+<h1 style="margin:0;font-size:clamp(48px,7vw,88px);line-height:.98;font-weight:700;letter-spacing:-0.045em;text-wrap:balance">Your sound, your stage.</h1>
+<p style="margin:0;max-width:520px;font-size:19px;line-height:1.5;color:#C4C4CE;text-wrap:pretty">Stream independent music for free. Artists set their own price and keep 100% of every sale, paid directly.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<a href="#join" style="text-decoration:none"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Button" size="lg" icon="upload-cloud" hint-size="180px,48px">Upload a track</x-import></a>
+<a href="#listeners" style="text-decoration:none"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Button" size="lg" variant="secondary" icon="headphones" hint-size="180px,48px">Start listening</x-import></a>
+</div>
+</div>
+<div style="position:relative;min-height:520px">
+<div style="position:absolute;inset:0 0 48px 48px;border-radius:24px;overflow:hidden;border:1px solid #24242E"><image-slot id="hero-venue" shape="rect" placeholder="Drop a night / venue photo — candid, high-contrast, grain OK"></image-slot></div>
+<div style="position:absolute;left:0;bottom:0;width:min(100%,380px);pointer-events:auto"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.TrackCard" title="Midnight Horizon" artist="Nova Reyes" price-cents="{{ 199 }}" verified="{{ true }}" active="{{ true }}" playing="{{ true }}" style="box-shadow:0 24px 64px rgba(0,0,0,.55)" hint-size="380px,190px"></x-import></div>
+</div>
+</div>
+</section>
+<div style="height:72px;background-image:radial-gradient(circle,#454552 1.2px,transparent 1.6px);background-size:14px 14px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);opacity:.7"></div>
+<section id="artists" style="max-width:1200px;margin:0 auto;padding:88px 24px">
+<div style="display:flex;flex-direction:column;gap:12px;margin-bottom:48px">
+<span style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#FF3D5A">For artists</span>
+<h2 style="margin:0;font-size:clamp(32px,4vw,48px);line-height:1.05;font-weight:700;letter-spacing:-0.04em;max-width:640px">Upload. Set your price. Get paid.</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:24px">
+<div style="background:#1C1C24;border:1px solid #24242E;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:14px"><span style="font-family:'Space Mono',monospace;font-size:13px;color:#FF3D5A">01</span><h3 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-0.02em">Upload your track</h3><p style="margin:0;font-size:15px;line-height:1.55;color:#9A9AA8">Drop an MP3 and your cover art. Publish it in one step.</p></div>
+<div style="background:#1C1C24;border:1px solid #24242E;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:14px"><span style="font-family:'Space Mono',monospace;font-size:13px;color:#FF3D5A">02</span><h3 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-0.02em">Set your price</h3><p style="margin:0;font-size:15px;line-height:1.55;color:#9A9AA8">Any price you choose, or free. Streaming stays free for listeners.</p></div>
+<div style="background:#1C1C24;border:1px solid #24242E;border-radius:16px;padding:28px;display:flex;flex-direction:column;gap:14px"><span style="font-family:'Space Mono',monospace;font-size:13px;color:#FF3D5A">03</span><h3 style="margin:0;font-size:22px;font-weight:700;letter-spacing:-0.02em">Get paid directly</h3><p style="margin:0;font-size:15px;line-height:1.55;color:#9A9AA8">Buyers pay you through Stripe. The whole sale is yours.</p></div>
+</div>
+</section>
+<section style="border-top:1px solid #1C1C24;border-bottom:1px solid #1C1C24;background:#121218">
+<div style="max-width:1200px;margin:0 auto;padding:96px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:40px;align-items:center">
+<div style="font-size:clamp(120px,18vw,240px);line-height:.85;font-weight:700;letter-spacing:-0.06em;background:linear-gradient(135deg,#FF3D5A 0%,#7C5CFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent">100%</div>
+<div style="display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font-size:clamp(28px,3.4vw,40px);line-height:1.1;font-weight:700;letter-spacing:-0.03em">of every music sale goes to the artist.</h2>
+<p style="margin:0;font-size:17px;line-height:1.55;color:#9A9AA8;max-width:460px">No platform cut on music sales. When someone buys your track, they're paying you.</p>
+</div>
+</div>
+</section>
+<section id="listeners" style="max-width:1200px;margin:0 auto;padding:88px 24px">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:40px">
+<div style="display:flex;flex-direction:column;gap:12px"><span style="font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#9479FF">For listeners</span><h2 style="margin:0;font-size:clamp(32px,4vw,48px);line-height:1.05;font-weight:700;letter-spacing:-0.04em">Stream free. Buy direct.</h2></div>
+<a href="#join" style="text-decoration:none"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Button" variant="outline" icon-right="arrow-right" hint-size="160px,40px">Browse new releases</x-import></a>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:24px">
+<x-import component-from-global-scope="BumpDesignSystem_4e5c17.TrackCard" title="Basement Choir" artist="June Ortega" price-cents="{{ 149 }}" verified="{{ true }}" hint-size="100%,190px"></x-import>
+<x-import component-from-global-scope="BumpDesignSystem_4e5c17.TrackCard" title="Low Tide Static" artist="Kito Mbeki" price-cents="{{ 0 }}" hint-size="100%,190px"></x-import>
+<x-import component-from-global-scope="BumpDesignSystem_4e5c17.TrackCard" title="Kick Drum Prayer" artist="Sable &amp; Rue" price-cents="{{ 249 }}" hint-size="100%,190px"></x-import>
+</div>
+</section>
+<section id="philly" style="max-width:1200px;margin:0 auto;padding:0 24px 88px">
+<div style="position:relative;overflow:hidden;border-radius:24px;border:1px solid #24242E;background:#1C1C24;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr))">
+<div style="padding:48px;display:flex;flex-direction:column;gap:20px">
+<div style="display:flex"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Badge" tone="live" hint-size="60px,22px">Launch event</x-import></div>
+<h2 style="margin:0;font-size:clamp(32px,4vw,48px);line-height:1.05;font-weight:700;letter-spacing:-0.04em">Meet us in Philly.</h2>
+<p style="margin:0;font-size:16px;line-height:1.55;color:#C4C4CE;max-width:440px">We're launching Bump at the Black Friday Marketplace &amp; Philly 4 Real TV Awards Ceremony. Come find us, bring your music, and upload your first track on the spot.</p>
+<div style="display:flex;flex-direction:column;gap:14px;padding:20px 0;border-top:1px solid #2E2E3A;border-bottom:1px solid #2E2E3A">
+<div style="display:flex;gap:16px"><span style="width:64px;flex-shrink:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#6B6B7A;padding-top:2px">When</span><span style="font-size:15px">Friday, November 27 · 8 AM – 9 PM</span></div>
+<div style="display:flex;gap:16px"><span style="width:64px;flex-shrink:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#6B6B7A;padding-top:2px">Where</span><span style="font-size:15px">KANVAS Venue, 3870 Lancaster Avenue, Philadelphia, PA 19104</span></div>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<a href="https://www.eventbrite.com/e/black-friday-marketplace-philly-4-real-tv-awards-ceremony-tickets-2004528782549" target="_blank" style="text-decoration:none"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Button" icon="ticket" hint-size="140px,40px">Get tickets</x-import></a>
+<a href="https://maps.google.com?daddr=39.9615811,-75.1997287" target="_blank" style="text-decoration:none"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Button" variant="ghost" icon="map-pin" hint-size="140px,40px">Directions</x-import></a>
+</div>
+</div>
+<div style="position:relative;min-height:360px"><image-slot id="philly-event" shape="rect" placeholder="Drop an event / Philly photo"></image-slot></div>
+</div>
+</section>
+<section id="join" style="max-width:1200px;margin:0 auto;padding:40px 24px 120px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:24px">
+<x-import component-from-global-scope="BumpDesignSystem_4e5c17.Logo" variant="mark" tone="signal" height="{{ 72 }}" hint-size="44px,72px"></x-import>
+<h2 style="margin:0;font-size:clamp(36px,5vw,64px);line-height:1;font-weight:700;letter-spacing:-0.045em">Nothing uploaded yet. Fix that?</h2>
+<p style="margin:0;font-size:17px;color:#9A9AA8">Free to join. Free to stream. 100% of sales to you.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+<a href="#" style="text-decoration:none"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Button" size="lg" icon="upload-cloud" hint-size="200px,48px">Upload your first track</x-import></a>
+<a href="#" style="text-decoration:none"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Button" size="lg" variant="ghost" hint-size="120px,48px">Sign in</x-import></a>
+</div>
+</section>
+<footer style="border-top:1px solid #1C1C24">
+<div style="max-width:1200px;margin:0 auto;padding:32px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:#6B6B7A">
+<div style="display:flex;align-items:center;gap:16px"><x-import component-from-global-scope="BumpDesignSystem_4e5c17.Logo" variant="wordmark" height="{{ 18 }}" hint-size="60px,18px"></x-import><span>© 2026 Bump</span></div>
+<div style="display:flex;gap:20px"><a href="#artists" style="color:#9A9AA8;text-decoration:none">Artists</a><a href="#listeners" style="color:#9A9AA8;text-decoration:none">Listeners</a><a href="#" style="color:#9A9AA8;text-decoration:none">Terms</a><a href="#" style="color:#9A9AA8;text-decoration:none">Privacy</a></div>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showEvent&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Launch&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { showEvent: this.props.showEvent ?? true };
+  }
+}
+</script>
+</body>
+</html>

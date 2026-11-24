@@ -2,15 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('/assets/fonts/SpaceGrotesk-Variable.woff2') format('woff2');
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('/assets/fonts/SpaceMono-400.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Space Mono';
+  src: url('/assets/fonts/SpaceMono-700.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
 :root {
-  --background: #09090b;
-  --foreground: #fafafa;
+  --bump-void: #0A0A0F;
+  --bump-signal: #FF3D5A;
+  --bump-pulse: #7C5CFF;
+  --bump-static: #F5F5F7;
+  --bump-grille: #1C1C24;
+  --border-subtle: #24242E;
+  --text-secondary: #9A9AA8;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bump-void);
+  color: var(--bump-static);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
   min-height: 100vh;
 }
 
+.font-mono {
+  font-family: 'Space Mono', monospace;
+}
