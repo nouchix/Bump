@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Smartphone, Apple, Play, Download, ShieldCheck, Zap } from 'lucide-react';
 import Link from 'next/link';
